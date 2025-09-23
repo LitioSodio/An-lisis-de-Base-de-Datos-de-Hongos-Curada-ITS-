@@ -23,13 +23,39 @@ Este script permite visualizar los primeros encabezados y las secuencias inicial
 
 **Uso:**
 ```python
+
+2. Conteo de secuencias por Phylum
+
+Archivo sugerido: scripts/conteo_phyla.py
+
+Descripción:
+Cuenta cuántas secuencias corresponden a cada phylum de hongos en la base de datos. Esto permite identificar la distribución taxonómica general y cuántas secuencias no están clasificadas.
+
+Uso:
+
+from collections import Counter
 import gzip
-from itertools import islice
 
-# Nombre de tu archivo fasta.gz
-fasta_file = "data/ITS.fasta.gz"
+# Contar secuencias por phylum
+conteo = contar_phyla("data/ITS.fasta.gz", compressed=True)
 
-# Mostrar las primeras 5 secuencias
-mostrar_fasta(fasta_file, n=5)
+
+Salida esperada:
+Lista de phyla y el número de secuencias correspondientes a cada uno.
+
+3. Conversión de FASTA a TSV ordenado por Phylum
+
+Archivo sugerido: scripts/fasta_a_tsv.py
+
+Descripción:
+Convierte la base de datos .fasta.gz a un archivo tabulado (.tsv) con las columnas ID, Phylum y Secuencia. Además, ordena el archivo resultante alfabéticamente por phylum para facilitar análisis posteriores.
+
+Uso:
+
+import pandas as pd
+import gzip
+
+# Convertir y guardar como TSV
+df = fasta_to_tsv_gz("data/ITS.fasta.gz", "results/hongos.tsv")
 
 
