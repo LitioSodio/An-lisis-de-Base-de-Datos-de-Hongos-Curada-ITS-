@@ -1,32 +1,41 @@
-import gzip
-from collections import Counter
+def fasta_to_tsv_gz(fasta_file, output_file="hongos.tsv"):
+    data = []
 
-
-def contar_phyla(fasta_file, compressed=True):
-    # Soporte para .fasta y .fasta.gz
-    open_func = gzip.open if compressed else open
-
-    phylum_counts = Counter()
-
-    with open_func(fasta_file, "rt") as f:
+    with gzip.open(fasta_file, "rt") as f:
+        seq_id, seq, phylum = None, [], None
         for line in f:
+            line = line.strip()
             if line.startswith(">"):
-                # Quitamos el ">" y partimos el encabezado
-                parts = line[1:].strip().split(";")
-                if len(parts) > 2:
-                    phylum = parts[2]  # Normalmente el phylum está en la 3ra posición
-                    phylum_counts[phylum] += 1
-                else:
-                    phylum_counts["Unclassified"] += 1
+                # Guardar la secuencia anterior si existe
+                if seq_id and phylum:
+                    data.append([seq_id, phylum, "".join(seq)])
 
-    # Mostrar resultados
-    print("Secuencias por Phylum:")
-    for phylum, count in phylum_counts.most_common():
-        print(f"{phylum}: {count}")
+                # Reiniciar
+                seq = []
+                header = line[1:]
+                parts = header.split(";")
 
-    return phylum_counts
+                seq_id = parts[0].split()[0]  # ID
+                phylum = parts[2] if len(parts) > 2 else "Unclassified"
+            else:
+                seq.append(line)
 
+        # Guardar la última
+        if seq_id and phylum:
+            data.append([seq_id, phylum, "".join(seq)])
 
-# Ejemplo de uso
-# Si tu archivo es .fasta.gz
-contar_phyla("ITS.fasta.gz", compressed=True)
+    # Convertir a DataFrame
+    df = pd.DataFrame(data, columns=["ID", "Phylum", "Secuencia"])
+
+    # Ordenar por Phylum
+    df = df.sort_values(by="Phylum")
+
+    # Guardar como TSV
+    df.to_csv(output_file, sep="\t", index=False)
+
+    print(f"✅ Archivo TSV generado: {output_file}")
+    return df
+
+# Ejemplo de uso:
+fasta_to_tsv_gz("ITS.fasta.gz", "hongos.tsv")
+
