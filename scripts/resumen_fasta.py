@@ -13,9 +13,9 @@ def mostrar_fasta(fasta_file, n=5):
                 print(f"\nEncabezado: {line.strip()}")
                 count += 1
             else:  # Secuencia asociada
-                print(f"Secuencia (inicio): {line.strip()[:80]}...")  # solo 80 bases para no saturar
-            if count >= n:  # mostramos solo las primeras n secuencias
+                print(f"Secuencia (inicio): {line.strip()[:50]}...")  # solo 50 bases para no saturar
+            if count >= n:  # mostramos solo las primeras 50 secuencias
                 break
 
-# Mostrar las primeras # secuencias
-mostrar_fasta(fasta_file, n=#)
+# Mostrar las primeras 50 secuencias
+mostrar_fasta(fasta_file, n=50)
