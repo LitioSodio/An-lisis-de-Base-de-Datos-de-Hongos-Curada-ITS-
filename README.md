@@ -5,7 +5,7 @@ La entrada principal es un archivo FASTA comprimido (ITS.fasta.gz).
 La salida principal es un archivo tabulado (.tvs o .tsv) con información organizada de cada secuencia (ID, taxonomía y secuencia).
 
 
-Análisis-de-Base-de-Datos-de-Hongos-Curada-ITS-/
+##Contenido
 
 scripts/                  # Scripts principales en Python
 
@@ -24,7 +24,7 @@ README.md                 # Este archivo
 
 .gitignore
 
-Contenidos del tvs generado con el script fasta_a_tvs.py 
+##Contenidos del tvs generado con el script fasta_a_tvs.py 
 
 ID -> Nombre del género y la especie del hongo y el ID del mismo 
 Phylum -> Reino y clase a la que pertenece el hongo 
