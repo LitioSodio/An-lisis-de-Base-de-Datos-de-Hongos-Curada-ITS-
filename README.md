@@ -40,9 +40,13 @@ Librerías necesarias:
 pandas
 
 se recomienda instalar dependencias con: 
-pip install -r 
+pip install -r pandas 
 
 ## Uso/Ejecucion 
+1. Clonar repositorio:
+
+git clone https://github.com/LitioSodio/An-lisis-de-Base-de-Datos-de-Hongos-Curada-ITS-.git
+cd An-lisis-de-Base-de-Datos-de-Hongos-Curada-ITS-
 
 # 1. Ver un resumen rápido de la base de datos
 python scripts/resumen_fasta.py ITS.fasta.gz
