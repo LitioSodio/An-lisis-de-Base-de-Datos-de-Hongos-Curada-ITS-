@@ -9,11 +9,18 @@ ITS.fasta.gz --> Base de datos curada de hongos descargada de UNIT
 
 Carpeta Scripts
 
-resumen_fasta --->  script que permite visualizar los primeros encabezados y las secuencias iniciales de la base de datos ITS.fasta.gz para tener un vistazo rápido de cómo se ve el archivo
+resumen_fasta.py --->  script que permite visualizar los primeros encabezados y las secuencias iniciales de la base de datos ITS.fasta.gz para tener un vistazo rápido de cómo se ve el archivo
 
 conteo_phyla.py--->  script que cuenta cuántas secuencias corresponden a cada phylum de hongos en la base de datos
 
-fasta_a_tvs --->  script principal que procesa los datos del archivo fasta.gz a formato .tvs
+fasta_a_tvs.py --->  script principal que procesa los datos del archivo fasta.gz a formato .tvs
 
-Hongos.tvs --> Resumen de tabla resultante luego de correr el script principal fasta_a_tvs.py
+Hongosresumen.tvs --> Resumen de tabla resultante luego de correr el script principal fasta_a_tvs.py
+
+Contenidos del tvs generado con el script fasta_a_tvs.py 
+
+ID -> Nombre del género y la especie del hongo y el ID del mismo 
+Phylum -> Reino y clase a la que pertenece el hongo 
+Secuencia -> Codigo génetico del hongo
+
 
