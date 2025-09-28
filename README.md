@@ -7,23 +7,22 @@ La salida principal es un archivo tabulado (.tvs o .tsv) con información organi
 
 Análisis-de-Base-de-Datos-de-Hongos-Curada-ITS-/
 
-│
-├── scripts/                  # Scripts principales en Python
-│  
-├── resumen_fasta.py      # Genera un resumen básico de las secuencias en el FASTA
-│   
-├── conteo_phyla.py       # Cuenta y clasifica secuencias según el phylum
-│   
-└── fasta_a_tvs.py        # Convierte el FASTA en un archivo tabulado (TSV/TVS)
+scripts/                  # Scripts principales en Python
 
-│
-├── ITS.fasta.gz              # Archivo FASTA curado con secuencias ITS de hongos
+resumen_fasta.py      # Genera un resumen básico de las secuencias en el FASTA
 
-├── Hongosresumen.tvs         # Ejemplo de salida tabulada
+conteo_phyla.py       # Cuenta y clasifica secuencias según el phylum
 
-├── README.md                 # Este archivo
+fasta_a_tvs.py        # Convierte el FASTA en un archivo tabulado (TSV/TVS)
 
-└── .gitignore
+ITS.fasta.gz              # Archivo FASTA curado con secuencias ITS de hongos
+
+
+Hongosresumen.tvs         # Ejemplo de salida tabulada
+
+README.md                 # Este archivo
+
+.gitignore
 
 Contenidos del tvs generado con el script fasta_a_tvs.py 
 
