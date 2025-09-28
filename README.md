@@ -15,5 +15,5 @@ conteo_phyla.py--->  script que cuenta cuántas secuencias corresponden a cada p
 
 fasta_a_tvs --->  script principal que procesa los datos del archivo fasta.gz a formato .tvs
 
-Hongos.tvs --> tabla resultante luego de correr el script principal fasta_a_tvs.py
+Hongos.tvs --> Resumen de tabla resultante luego de correr el script principal fasta_a_tvs.py
 
