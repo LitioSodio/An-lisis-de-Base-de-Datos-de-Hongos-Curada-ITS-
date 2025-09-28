@@ -2,6 +2,9 @@
 
 Este repositorio contiene scripts en Python para el análisis y procesamiento de una base de datos curada de secuencias de hongos en formato FASTA comprimido (`.fasta.gz`). Los scripts permiten explorar, resumir y transformar la base de datos para su posterior análisis.
 
+## CONTENIDO 
+
+
 
 ### 1. Resumen de las primeras secuencias
 **Archivo sugerido:** `scripts/resumen_fasta.py`
